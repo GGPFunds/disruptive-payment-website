@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Disruptive Payments | Specialized Payment Processing</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', -apple-system, sans-serif; color: #1a1a2e; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 2rem; }
+
+    /* ── NAV ── */
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 72px; background: #d0d4db;
+      border-bottom: 1px solid #d8dce4; position: sticky; top: 0; z-index: 100;
+    }
+    .nav-logo img { height: 48px; width: auto; display: block; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: #333; transition: color .2s; }
+    .nav-links a:hover { color: #1a73e8; }
+    .nav-right { display: flex; gap: 12px; align-items: center; }
+    .btn-ghost { font-size: 14px; font-weight: 500; color: #1a73e8; padding: 8px 16px; border: 1.5px solid #1a73e8; border-radius: 6px; transition: all .2s; }
+    .btn-ghost:hover { background: #1a73e8; color: #fff; }
+    .btn-solid { font-size: 14px; font-weight: 600; color: #fff; background: #1a73e8; padding: 9px 20px; border-radius: 6px; transition: background .2s; }
+    .btn-solid:hover { background: #1558b0; }
+
+    /* ── HERO ── */
+    .hero {
+      background: url('titlebackground.png') center center / cover no-repeat;
+      padding: 7rem 2rem 6rem; text-align: center;
+    }
+    .hero-eyebrow { display: block; margin-bottom: 0.5rem; }
+    .hero-eyebrow img { width: 100%; max-width: 760px; height: auto; display: block; margin: 0 auto; }
+    .hero h1 { font-size: 52px; font-weight: 700; color: #fff; line-height: 1.2; max-width: 760px; margin: 0 auto 1.25rem; }
+    .hero h1 span { color: #5fb3ff; }
+    .hero p { font-size: 18px; color: #a8c8f8; max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.8; }
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-hero-primary { background: #1a73e8; color: #fff; padding: 15px 36px; border-radius: 6px; font-size: 16px; font-weight: 600; transition: background .2s; }
+    .btn-hero-primary:hover { background: #1558b0; }
+    .btn-hero-ghost { background: transparent; color: #fff; padding: 14px 36px; border-radius: 6px; font-size: 16px; font-weight: 600; border: 2px solid rgba(255,255,255,.4); transition: border-color .2s; }
+    .btn-hero-ghost:hover { border-color: #fff; }
+
+    /* ── STATS BAR ── */
+    .stats-bar { background: #fff; border-bottom: 1px solid #e4eaf4; padding: 2rem 0; }
+    .stats-inner { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; text-align: center; }
+    .stat-num { font-size: 32px; font-weight: 700; color: #1a73e8; }
+    .stat-label { font-size: 13px; color: #666; margin-top: 2px; }
+
+    /* ── SECTIONS ── */
+    .section { padding: 5rem 0; background: #d0d4db; border-top: 2px solid #0d1b3e; }
+    .section-alt { background: #d0d4db; }
+    .section-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #1a73e8; margin-bottom: .5rem; }
+    .section-title { font-size: 36px; font-weight: 700; color: #0d1b3e; line-height: 1.25; margin-bottom: .75rem; }
+    .section-sub { font-size: 16px; color: #555; max-width: 580px; line-height: 1.8; margin-bottom: 3rem; }
+
+    /* ── THREE SERVICE CARDS ── */
+    .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .service-card { background: #5fb3ff; border: 1px solid #4a9fe8; border-radius: 14px; padding: 2rem; transition: box-shadow .2s, transform .2s; }
+    .service-card:hover { box-shadow: 0 8px 32px rgba(26,115,232,.12); transform: translateY(-3px); }
+    .service-card-icon { display: none; }
+    .service-card h3 { font-size: 24px; font-weight: 700; color: #0d1b3e; margin-bottom: .75rem; }
+    .service-card p { font-size: 14px; color: #0d1b3e; line-height: 1.7; margin-bottom: 1.25rem; font-weight: 500; }
+    .card-link { font-size: 14px; font-weight: 600; color: #0d1b3e; display: inline-flex; align-items: center; gap: 4px; }
+    .card-link:hover { text-decoration: underline; }
+
+    /* ── PILLARS ── */
+    .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .pillar { text-align: center; padding: 2.5rem 1.5rem; background: #5fb3ff; border-radius: 14px; border: 1px solid #4a9fe8; }
+    .pillar-icon { display: none; }
+    .pillar h3 { font-size: 24px; font-weight: 700; color: #0d1b3e; margin-bottom: .75rem; }
+    .pillar p { font-size: 14px; color: #0d1b3e; line-height: 1.7; font-weight: 500; }
+
+    /* ── INDUSTRIES ── */
+    .industries-carousel { overflow: hidden; position: relative; }
+    .industries-scroll { display: flex; gap: 16px; width: max-content; }
+    .industry-tile { border: 1px solid #e4eaf4; border-radius: 12px; min-width: 220px; max-width: 220px; height: 200px; flex-shrink: 0; overflow: hidden; position: relative; background-size: cover; background-position: center; transition: box-shadow .2s, transform .2s; }
+    .industry-tile:hover { box-shadow: 0 6px 24px rgba(26,115,232,.2); transform: translateY(-2px); }
+    .industry-tile-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 60%); border-radius: 12px; }
+    .industry-tile-overlay { background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 100%); }
+    .industry-tile-content { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1rem; text-align: center; }
+    .industry-tile-icon { display: none; }
+    .industry-tile h3 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 3px; }
+    .industry-tile p { font-size: 11px; color: rgba(255,255,255,0.8); line-height: 1.5; }
+    @keyframes scrollloop { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .industries-scroll { animation: scrollloop 20s linear infinite; }
+    .industries-scroll:hover { animation-play-state: paused; }
+    @keyframes fadein { from { opacity: 0; transform: translateY(32px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-in { opacity: 0; }
+    .fade-in.visible { animation: fadein 1.6s ease forwards; }
+    .fade-in:nth-child(2) { animation-delay: 0.3s; }
+    .fade-in:nth-child(3) { animation-delay: 0.6s; }
+
+    /* ── CTA BAND ── */
+    .cta-band { background: url('Approved.png') center center / cover no-repeat; padding: 5rem 2rem; text-align: center; position: relative; }
+    .cta-band::before { content: ''; position: absolute; inset: 0; background: rgba(13,27,62,0.65); }
+    .cta-band .container { position: relative; z-index: 1; }
+    .cta-band h2 { font-size: 38px; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+    .cta-band p { font-size: 17px; color: #a8c8f8; max-width: 540px; margin: 0 auto 2rem; line-height: 1.8; }
+
+    /* ── FOOTER ── */
+    .footer { background: #07102a; padding: 4rem 2rem 2rem; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; margin-bottom: 3rem; }
+    .footer-brand img { height: 40px; filter: brightness(0) invert(1); opacity: .85; margin-bottom: 1rem; }
+    .footer-brand p { font-size: 13px; color: #6a7fa8; line-height: 1.7; max-width: 260px; }
+    .footer-col h4 { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: #8a9dc0; margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
+    .footer-col ul li a { font-size: 13px; color: #6a7fa8; transition: color .2s; }
+    .footer-col ul li a:hover { color: #fff; }
+    .footer-bottom { border-top: 1px solid #1a2a4a; padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+    .footer-bottom p { font-size: 12px; color: #4a5a7a; }
+    .footer-bottom a { font-size: 12px; color: #4a5a7a; }
+    .footer-bottom a:hover { color: #8a9dc0; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero h1 { font-size: 36px; }
+      .services-grid, .pillars-grid, .industries-grid { grid-template-columns: 1fr 1fr; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .section-title { font-size: 28px; }
+    }
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 28px; }
+      .nav-links { display: none; }
+      .services-grid, .pillars-grid, .industries-grid { grid-template-columns: 1fr; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: .5rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="#" class="nav-logo"><img src="Logo.png" alt="Disruptive Payments" /></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#solutions">Solutions</a></li>
+      <li><a href="#industries">Industries</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+<a href="#contact" class="btn-solid">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-eyebrow"><img src="Logo.png" alt="Disruptive Payments" /></div>
+    <h1>Process Payments with <span>Confidence.</span> Scale without Limits.</h1>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-hero-primary">Get Approved Today</a>
+      <a href="#solutions" class="btn-hero-ghost">Explore Our Solutions</a>
+    </div>
+  </section>
+
+
+  <!-- SOLUTIONS -->
+  <section class="section" id="solutions" style="background:#fff;">
+    <div class="container">
+      <p class="section-eyebrow" style="font-size:32px;font-weight:700;color:#0d1b3e;text-transform:none;letter-spacing:0;">Our Solutions</p>
+      <h2 class="section-title" style="font-size:18px;font-weight:400;color:#0d1b3e;">Payment infrastructure built around your business</h2>
+      <div class="services-grid">
+        <div class="service-card fade-in">
+          <div class="service-card-icon">💳</div>
+          <h3>Direct Merchants</h3>
+          <p>Full service merchant accounts with advanced payment technology tailored to your industry, volume, and business profile.</p>
+          <a href="#contact" class="card-link">Learn more →</a>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-card-icon">🔗</div>
+          <h3>Software Integrations</h3>
+          <p>Embed seamless payment processing directly into your platform. Our APIs integrate cleanly with existing software stacks.</p>
+          <a href="#contact" class="card-link">Learn more →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLARS -->
+  <section class="section section-alt" id="about">
+    <div class="container">
+      <p class="section-eyebrow" style="font-size:32px;font-weight:700;color:#0d1b3e;text-transform:none;letter-spacing:0;">Why Disruptive Payments</p>
+      <h2 class="section-title" style="font-size:18px;font-weight:400;color:#0d1b3e;">The partner that stands by you</h2>
+      <div class="pillars-grid">
+        <div class="pillar fade-in">
+          <div class="pillar-icon">🔒</div>
+          <h3>Security First</h3>
+          <p>PCI-compliant infrastructure with advanced fraud tools to keep your transactions and customers protected at every step.</p>
+        </div>
+        <div class="pillar fade-in">
+          <div class="pillar-icon">⚙️</div>
+          <h3>Built to Scale</h3>
+          <p>Flexible, customizable processing solutions that adapt as your business grows from startup volume to enterprise scale.</p>
+        </div>
+        <div class="pillar fade-in">
+          <div class="pillar-icon">🎯</div>
+          <h3>Upfront Underwriting</h3>
+          <p>We review your business thoroughly before approval. Once you're in, you're in. No surprise shutoffs, no unexplained holds.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES -->
+  <section class="section" id="industries" style="background:#fff;">
+    <div class="container">
+      <p class="section-eyebrow" style="font-size:32px;font-weight:700;color:#0d1b3e;text-transform:none;letter-spacing:0;">Industries we serve</p>
+      <h2 class="section-title" style="font-size:18px;font-weight:400;color:#0d1b3e;">Purpose-built programs for the industries that need them most</h2>
+      <div class="industries-carousel">
+        <div class="industries-scroll">
+          <div class="industry-tile" style="background-image:url('Automotive.png')"><div class="industry-tile-overlay"></div><div class="industry-tile-content"><h3>Automotive</h3><p>Car dealerships, service departments, and CDK Global platform integrations for sales, parts, and finance.</p></div></div>
+          <div class="industry-tile" style="background-image:url('Banks_Financial_Institutions.png')"><div class="industry-tile-overlay"></div><div class="industry-tile-content"><h3>Banks & Financial Institutions</h3><p>Robust payment processing and settlement solutions that enhance treasury and cash management offerings.</p></div></div>
+          <div class="industry-tile" style="background-image:url('Retail.png')"><div class="industry-tile-overlay"></div><div class="industry-tile-content"><h3>Retail</h3><p>Streamlined operations and optimized costs for businesses of all sizes, both in store and online.</p></div></div>
+          <div class="industry-tile" style="background-image:url('Mobile_Merchants.png')"><div class="industry-tile-overlay"></div><div class="industry-tile-content"><h3>Mobile Merchants</h3><p>Virtual terminals and mobile solutions for food trucks, pop-up shops, vendors, and on-the-go businesses.</p></div></div>
+          <div class="industry-tile" style="background-image:url('Parking.png')"><div class="industry-tile-overlay"></div><div class="industry-tile-content"><h3>Parking</h3><p>Fast, secure credit card processing for attended locations and unattended self-serve kiosks.</p></div></div>
+          <div class="industry-tile" style="background-image:url('Professional_Services.png')"><div class="industry-tile-overlay"></div><div class="industry-tile-content"><h3>Professional Services</h3><p>Payment solutions for attorneys, accountants, financial planners, therapists, and many other service providers.</p></div></div>
+          <div class="industry-tile" style="background-image:url('Restaurant.png')"><div class="industry-tile-overlay"></div><div class="industry-tile-content"><h3>Restaurant</h3><p>Full restaurant management and point-of-sale payment solutions for dining establishments of every size.</p></div></div>
+          <!-- Duplicates for seamless loop -->
+          <div class="industry-tile" style="background-image:url('Automotive.png')"><div class="industry-tile-overlay"></div><div class="industry-tile-content"><h3>Automotive</h3><p>Car dealerships, service departments, and CDK Global platform integrations for sales, parts, and finance.</p></div></div>
+          <div class="industry-tile" style="background-image:url('Banks_Financial_Institutions.png')"><div class="industry-tile-overlay"></div><div class="industry-tile-content"><h3>Banks & Financial Institutions</h3><p>Robust payment processing and settlement solutions that enhance treasury and cash management offerings.</p></div></div>
+          <div class="industry-tile" style="background-image:url('Retail.png')"><div class="industry-tile-overlay"></div><div class="industry-tile-content"><h3>Retail</h3><p>Streamlined operations and optimized costs for businesses of all sizes, both in store and online.</p></div></div>
+          <div class="industry-tile" style="background-image:url('Mobile_Merchants.png')"><div class="industry-tile-overlay"></div><div class="industry-tile-content"><h3>Mobile Merchants</h3><p>Virtual terminals and mobile solutions for food trucks, pop-up shops, vendors, and on-the-go businesses.</p></div></div>
+          <div class="industry-tile" style="background-image:url('Parking.png')"><div class="industry-tile-overlay"></div><div class="industry-tile-content"><h3>Parking</h3><p>Fast, secure credit card processing for attended locations and unattended self-serve kiosks.</p></div></div>
+          <div class="industry-tile" style="background-image:url('Professional_Services.png')"><div class="industry-tile-overlay"></div><div class="industry-tile-content"><h3>Professional Services</h3><p>Payment solutions for attorneys, accountants, financial planners, therapists, and many other service providers.</p></div></div>
+          <div class="industry-tile" style="background-image:url('Restaurant.png')"><div class="industry-tile-overlay"></div><div class="industry-tile-content"><h3>Restaurant</h3><p>Full restaurant management and point-of-sale payment solutions for dining establishments of every size.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band" id="contact">
+    <div class="container">
+      <h2>Ready to get approved?</h2>
+      <p>Tell us about your business and we will reach out within one business day. No surprises. Just straightforward answers.</p>
+      <a href="#contact-form" class="btn-hero-primary">Start Your Application</a>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM -->
+  <section class="section" id="contact-form">
+    <div class="container">
+      <p class="section-eyebrow" style="font-size:32px;font-weight:700;color:#0d1b3e;text-transform:none;letter-spacing:0;">Get in touch</p>
+      <h2 class="section-title" style="font-size:18px;font-weight:400;color:#0d1b3e;">Let's find the right solution for you</h2>
+      <form style="max-width:780px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <label style="font-size:13px;font-weight:500;color:#444;">Full name</label>
+            <input type="text" placeholder="Jane Smith" style="padding:11px 14px;border:1px solid #dde3ee;border-radius:6px;font-size:14px;font-family:inherit;" />
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <label style="font-size:13px;font-weight:500;color:#444;">Business email</label>
+            <input type="email" placeholder="jane@company.com" style="padding:11px 14px;border:1px solid #dde3ee;border-radius:6px;font-size:14px;font-family:inherit;" />
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <label style="font-size:13px;font-weight:500;color:#444;">Company name</label>
+            <input type="text" placeholder="Acme LLC" style="padding:11px 14px;border:1px solid #dde3ee;border-radius:6px;font-size:14px;font-family:inherit;" />
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <label style="font-size:13px;font-weight:500;color:#444;">Industry</label>
+            <select style="padding:11px 14px;border:1px solid #dde3ee;border-radius:6px;font-size:14px;font-family:inherit;background:#fff;">
+              <option value="">Select your industry</option>
+              <option>Peptides</option>
+              <option>Ammunition</option>
+              <option>Adult</option>
+              <option>Tribal</option>
+              <option>Healthcare</option>
+              <option>Car dealership software</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <label style="font-size:13px;font-weight:500;color:#444;">Monthly processing volume</label>
+            <input type="text" placeholder="e.g. $50,000" style="padding:11px 14px;border:1px solid #dde3ee;border-radius:6px;font-size:14px;font-family:inherit;" />
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <label style="font-size:13px;font-weight:500;color:#444;">Phone number</label>
+            <input type="tel" placeholder="(310) 555-0100" style="padding:11px 14px;border:1px solid #dde3ee;border-radius:6px;font-size:14px;font-family:inherit;" />
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:20px;">
+          <label style="font-size:13px;font-weight:500;color:#444;">Message</label>
+          <textarea rows="4" placeholder="Tell us about your business and what you need..." style="padding:11px 14px;border:1px solid #dde3ee;border-radius:6px;font-size:14px;font-family:inherit;resize:vertical;"></textarea>
+        </div>
+        <button type="submit" style="background:#1a73e8;color:#fff;padding:14px 40px;border:none;border-radius:6px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;">Submit Inquiry</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="Logo.png" alt="Disruptive Payments" />
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#solutions">Solutions</a></li>
+            <li><a href="#industries">Industries</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>725 Arizona Ave, Santa Monica, CA 90401</p>
+        <p>© 2026 Disruptive Payments. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); }
+        else { e.target.classList.remove('visible'); }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
