@@ -27,4 +27,14 @@ a { text-decoration: none; color: inherit; }
 .footer { background: #07102a; padding: 2rem; text-align: center; }
 .footer p { font-size: 13px; color: #6a7fa8; }
 .footer a { color: #8a9dc0; }
-@media (max-width: 600px) { .nav-links { display: none; } .hero-content h1 { font-size: 32px; } }
+html, body { overflow-x: hidden; }
+@media (max-width: 768px) {
+  .nav { padding: 0 1rem; }
+  .nav-links { display: none; }
+  .btn-solid { font-size: 13px; padding: 8px 14px; }
+  .hero-content h1 { font-size: 28px; }
+  .hero-sub { font-size: 15px; }
+  .page-hero { height: 300px; }
+  .content { padding: 2rem 1rem; }
+  .content h2 { font-size: 22px; }
+}

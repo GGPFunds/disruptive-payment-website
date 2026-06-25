@@ -62,7 +62,15 @@
     .footer a:hover { color: #fff; }
 
     @media (max-width: 800px) { .req-grid { grid-template-columns: 1fr; } }
-  </style>
+    html, body { overflow-x: hidden; }
+    @media (max-width: 768px) {
+      .nav { padding: 0 1rem; }
+      .nav-links { display: none; }
+      .btn-solid { font-size: 13px; padding: 8px 14px; }
+      .page-hero h1 { font-size: 28px; }
+      .page-hero p { font-size: 15px; }
+      .content h2 { font-size: 22px; }
+    }  </style>
 </head>
 <body>
   <nav class="nav">
