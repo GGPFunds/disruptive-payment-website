@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Healthcare and Wellness - Disruptive Payments</title>
+  <link rel="icon" type="image/png" href="../favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="industry.css" />
+  <style>
+    .sectors-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 2rem 0; }
+    .sector-card { background: #fff; border: 1px solid #e4eaf4; border-radius: 12px; padding: 1.5rem; cursor: pointer; transition: box-shadow .2s, transform .2s, border-color .2s; }
+    .sector-card:hover { box-shadow: 0 6px 24px rgba(26,115,232,.15); transform: translateY(-2px); border-color: #1a73e8; }
+    .sector-card h3 { font-size: 16px; font-weight: 700; color: #1a73e8; margin-bottom: .5rem; display: flex; align-items: center; gap: 8px; }
+    .sector-card h3::after { content: '\2197'; font-size: 13px; opacity: 0.7; }
+    .sector-card p { font-size: 13px; color: #555; line-height: 1.6; }
+    .solutions-list { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 2rem; margin: 1rem 0; }
+    .solutions-list li { font-size: 15px; color: #444; list-style: none; padding-left: 1.25rem; position: relative; }
+    .solutions-list li::before { content: '\2713'; position: absolute; left: 0; color: #1a73e8; font-weight: 700; }
+    .featured-card { display: flex; justify-content: space-between; align-items: center; background: #0d1b3e; border-radius: 12px; padding: 1.75rem 2rem; margin: 1.5rem 0 0; transition: box-shadow .2s, transform .2s; }
+    .featured-card:hover { box-shadow: 0 6px 24px rgba(13,27,62,.25); transform: translateY(-2px); }
+    .featured-card h3 { font-size: 18px; font-weight: 700; color: #5fb3ff; margin-bottom: .4rem; }
+    .featured-card p { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.6; max-width: 600px; }
+    .featured-card-cta { font-size: 15px; font-weight: 700; color: #5fb3ff; white-space: nowrap; margin-left: 2rem; }
+    @media (max-width: 700px) { .sectors-grid { grid-template-columns: 1fr; } .solutions-list { grid-template-columns: 1fr; } .featured-card { flex-direction: column; align-items: flex-start; gap: 1rem; } .featured-card-cta { margin-left: 0; } }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="../index.html"><img src="../Logo.png" alt="Disruptive Payments" /></a>
+    <ul class="nav-links">
+      
+      <li><a href="../index.html#solutions">Solutions</a></li><li><a href="../mobile-payments.html">Mobile Payments</a></li>
+      <li><a href="../index.html#industries">Industries</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="../index.html#contact" class="btn-solid">Get Started</a>
+  </nav>
+
+  <div class="page-hero" style="background-image: url('../healthcare.png')">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="eyebrow">Industries</p>
+      <h1>Healthcare and Wellness</h1>
+      <p class="hero-sub">Compliant solutions for med spas, peptide providers, and telemedicine platforms with Legit Script certification.</p>
+    </div>
+  </div>
+
+  <div class="content container">
+
+    <h2>Healthcare Payment Processing Solutions</h2>
+    <p>Healthcare organizations require payment solutions that are secure, reliable, and designed around the unique needs of providers, pharmacies, software platforms, and patient focused businesses.</p>
+    <p>Disruptive Payments delivers healthcare payment processing solutions for medical practices, medspas, telehealth providers, compound pharmacies, nutraceutical companies, and healthcare technology platforms throughout the United States.</p>
+    <p>Our team understands the challenges healthcare organizations face when accepting payments, managing recurring billing, integrating with software platforms, and improving patient collections. We work closely with healthcare providers and technology companies to implement payment solutions that simplify operations and create a better payment experience for patients.</p>
+
+    <h2 style="margin-top:2.5rem;">Sectors We Serve</h2>
+    <p style="margin-bottom:1.5rem;color:#666;font-size:14px;">Click any sector to learn more.</p>
+
+    <div class="sectors-grid">
+
+      <div class="sector-card" onclick="window.location.href='medspa-payment-processing.html'">
+        <h3>Medspas</h3>
+        <p>Payment solutions designed for aesthetic and wellness practices.</p>
+      </div>
+
+      <div class="sector-card" onclick="window.location.href='telehealth-payment-processing.html'">
+        <h3>Telehealth Providers</h3>
+        <p>Secure payments for virtual healthcare delivery.</p>
+      </div>
+
+      <div class="sector-card" onclick="window.location.href='compound-pharmacy-payment-processing.html'">
+        <h3>Compound Pharmacies</h3>
+        <p>Reliable merchant services for pharmacy operations.</p>
+      </div>
+
+      <div class="sector-card" onclick="window.location.href='nutraceutical-payment-processing.html'">
+        <h3>Nutraceutical Companies</h3>
+        <p>Subscription and ecommerce processing for wellness businesses.</p>
+      </div>
+
+      <div class="sector-card" onclick="window.location.href='emr-ehr-payment-integrations.html'">
+        <h3>EMR &amp; EHR Platforms</h3>
+        <p>Integrated payments for healthcare software platforms.</p>
+      </div>
+
+      <div class="sector-card" onclick="window.location.href='medical-practices.html'">
+        <h3>Medical Practices</h3>
+        <p>Efficient patient payment collection for providers.</p>
+      </div>
+
+    </div>
+
+    <div class="featured-card" onclick="window.location.href='patient-financing.html'" style="cursor:pointer;">
+      <div class="featured-card-text">
+        <h3>Patient &amp; Medspa Financing</h3>
+        <p>Offer patients flexible financing options at the point of care. Increase treatment acceptance rates and average ticket size while getting paid upfront.</p>
+      </div>
+      <div class="featured-card-cta">Learn more &rarr;</div>
+    </div>
+
+    <h2 style="margin-top:2.5rem;">Healthcare Payment Solutions</h2>
+    <p>Disruptive Payments provides:</p>
+    <ul class="solutions-list">
+      <li>Credit card processing</li>
+      <li>ACH payment solutions</li>
+      <li>Virtual terminals</li>
+      <li>Online payment portals</li>
+      <li>Recurring billing</li>
+      <li>Subscription management</li>
+      <li>Ecommerce payment processing</li>
+      <li>Payment links</li>
+      <li>Text to pay solutions</li>
+      <li>EMR and EHR payment integrations</li>
+      <li>Virtual card acceptance</li>
+      <li>Payment reporting and reconciliation</li>
+    </ul>
+
+    <p>Whether you operate a healthcare practice, healthcare technology company, pharmacy, or wellness business, Disruptive Payments can help implement a payment strategy that supports growth while delivering a better experience for patients and customers.</p>
+
+  </div>
+
+  <div class="cta-band">
+    <h2>Ready to get started?</h2>
+    <p>Contact our team to learn how Disruptive Payments can support your healthcare or wellness business.</p>
+    <a href="../index.html#contact" class="btn-solid">Get in Touch</a>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2026 Disruptive Payments LLC. All rights reserved. &nbsp;|&nbsp; <a href="../privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="../terms-and-conditions.html">Terms &amp; Conditions</a></p>
+  </footer>
+
+</body>
+</html>

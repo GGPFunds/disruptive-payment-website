@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Embedded Payments & Software Integrations | Disruptive Payments</title>
+  <meta name="description" content="Integrate payment processing into your existing point of sale, EMR, EHR, or ecommerce software. Authorize.net integrations for WooCommerce, BigCommerce, WordPress, and more." />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', -apple-system, sans-serif; color: #1a1a2e; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 2rem; }
+
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 72px; background: #d0d4db;
+      border-bottom: 1px solid #d8dce4; position: sticky; top: 0; z-index: 100;
+    }
+    .nav img { height: 48px; width: auto; display: block; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: #333; }
+    .nav-links a:hover { color: #1a73e8; }
+    .btn-solid { font-size: 14px; font-weight: 600; color: #fff; background: #1a73e8; padding: 9px 20px; border-radius: 6px; }
+    .btn-solid:hover { background: #1558b0; }
+
+    .page-hero { background: #0d1b3e; padding: 4rem 2rem 3rem; text-align: center; }
+    .page-hero .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #5fb3ff; margin-bottom: .75rem; }
+    .page-hero h1 { font-size: 42px; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+    .page-hero p { font-size: 17px; color: rgba(255,255,255,0.75); max-width: 680px; margin: 0 auto; line-height: 1.8; }
+
+    .content { padding: 3.5rem 0 4rem; }
+    .content h2 { font-size: 26px; font-weight: 700; color: #0d1b3e; margin-bottom: .6rem; }
+    .content p { font-size: 15px; color: #555; line-height: 1.8; margin-bottom: 1rem; }
+    .section-block { margin-bottom: 3.5rem; }
+
+    .integration-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 1.75rem 0; }
+    .integration-card { background: #fff; border: 1px solid #e4eaf4; border-radius: 12px; padding: 1.75rem 1.5rem; }
+    .integration-card h3 { font-size: 16px; font-weight: 700; color: #1a73e8; margin-bottom: .5rem; }
+    .integration-card p { font-size: 13px; color: #555; line-height: 1.7; margin: 0; }
+
+    .highlight-band { background: #0d1b3e; border-radius: 12px; padding: 2rem 2.25rem; margin: 1.75rem 0; }
+    .highlight-band h3 { font-size: 20px; font-weight: 700; color: #5fb3ff; margin-bottom: .75rem; }
+    .highlight-band p { font-size: 14px; color: rgba(255,255,255,0.82); line-height: 1.8; margin-bottom: .9rem; }
+    .highlight-band p:last-child { margin-bottom: 0; }
+
+    .platform-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 1.5rem 0; }
+    .platform-pill { background: #f4f7fd; border: 1.5px solid #1a73e8; border-radius: 10px; padding: 1.25rem 1.5rem; text-align: center; }
+    .platform-pill h4 { font-size: 15px; font-weight: 700; color: #0d1b3e; margin-bottom: .35rem; }
+    .platform-pill p { font-size: 12px; color: #666; line-height: 1.6; margin: 0; }
+
+    .check-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 1.5rem 0; }
+    .check-item { background: #fff; border: 1px solid #e4eaf4; border-radius: 10px; padding: .9rem 1.1rem; font-size: 14px; font-weight: 600; color: #0d1b3e; display: flex; align-items: center; gap: 10px; }
+    .check-item::before { content: '\2713'; color: #1a73e8; font-weight: 700; font-size: 15px; flex-shrink: 0; }
+
+    .cta-band { background: #1a73e8; padding: 3rem 2rem; text-align: center; }
+    .cta-band h2 { font-size: 28px; font-weight: 700; color: #fff; margin-bottom: .75rem; }
+    .cta-band p { font-size: 16px; color: rgba(255,255,255,0.85); margin-bottom: 1.75rem; }
+    .btn-white { background: #fff; color: #1a73e8; font-size: 15px; font-weight: 700; padding: 13px 32px; border-radius: 6px; display: inline-block; }
+    .btn-white:hover { background: #f0f4ff; }
+
+    .footer { background: #0d1b3e; padding: 1.5rem 2rem; text-align: center; }
+    .footer p { font-size: 13px; color: rgba(255,255,255,0.55); }
+    .footer a { color: rgba(255,255,255,0.7); }
+    .footer a:hover { color: #fff; }
+
+    @media (max-width: 800px) {
+      .integration-grid, .platform-row, .check-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html"><img src="Logo.png" alt="Disruptive Payments" /></a>
+    <ul class="nav-links">
+      
+      <li><a href="index.html#solutions">Solutions</a></li>
+      <li><a href="mobile-payments.html">Mobile Payments</a></li>
+      <li><a href="index.html#industries">Industries</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a href="index.html#contact" class="btn-solid">Get Started</a>
+  </nav>
+
+  <div class="page-hero">
+    <p class="eyebrow">Solutions</p>
+    <h1>Embedded Payments</h1>
+    <p>Integrate payment processing directly into the software your business already runs. No switching platforms, no workarounds. Payments that work inside your existing workflow.</p>
+  </div>
+
+  <div class="content container">
+
+    <div class="section-block">
+      <h2>Payments Built Into the Software You Already Use</h2>
+      <p>Most businesses already have software they depend on — a point of sale system, an EMR or EHR platform, a practice management tool, or an ecommerce storefront. The question is whether payment processing works seamlessly inside that software or creates friction around it.</p>
+      <p>Disruptive Payments integrates payment acceptance directly into your existing platforms. Our team works with you to identify the right integration path, connect your payment infrastructure to your software environment, and ensure your team can accept payments without ever leaving the system they already know. If you are not sure whether your platform is compatible, reach out and we will find out together.</p>
+    </div>
+
+    <div class="section-block">
+      <h2>Integration Categories</h2>
+      <div class="integration-grid">
+        <div class="integration-card">
+          <h3>Point of Sale Systems</h3>
+          <p>Whether you are running a retail POS, a restaurant system, or an industry-specific terminal setup, we integrate payment processing so transactions flow directly through your existing hardware and software without a separate processing layer.</p>
+        </div>
+        <div class="integration-card">
+          <h3>EMR &amp; EHR Platforms</h3>
+          <p>Healthcare practices using electronic medical and health record systems can embed patient payment collection directly into the clinical workflow. Collect copays, balances, and deposits inside the platform your staff already uses every day.</p>
+        </div>
+        <div class="integration-card">
+          <h3>Ecommerce Platforms</h3>
+          <p>Online sellers need payment processing that connects cleanly to their storefront. We integrate with the leading ecommerce platforms so your checkout experience is seamless, secure, and fully under your control.</p>
+        </div>
+        <div class="integration-card">
+          <h3>Practice Management Software</h3>
+          <p>Dental, legal, veterinary, and other service-based practices often run industry-specific practice management tools. We work with those platforms to embed billing and payment collection where it fits naturally into your workflow.</p>
+        </div>
+        <div class="integration-card">
+          <h3>CRM &amp; ERP Systems</h3>
+          <p>Businesses running CRM or ERP platforms can embed payment acceptance and AP automation directly into those systems, eliminating manual data entry and keeping payment data synchronized with your records automatically.</p>
+        </div>
+        <div class="integration-card">
+          <h3>Custom &amp; Proprietary Software</h3>
+          <p>If your business runs on a platform built specifically for your operation, we can work with your development team or ours to build a payment integration that fits. Our gateway partners provide robust APIs for custom environments.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <div class="highlight-band">
+        <h3>Ecommerce Integrations via Authorize.net</h3>
+        <p>For businesses selling online, Disruptive Payments leverages the Authorize.net gateway to connect payment processing directly to the most widely used ecommerce platforms. Authorize.net has pre-built integrations that make setup straightforward, with no custom development required for standard configurations.</p>
+        <p>Through Authorize.net, we support payment integrations for WooCommerce, BigCommerce, and WordPress, covering the majority of independent online storefronts. If your ecommerce platform is not listed, contact our team and we will confirm compatibility before you get started.</p>
+      </div>
+
+      <div class="platform-row">
+        <div class="platform-pill">
+          <h4>WooCommerce</h4>
+          <p>Full payment processing integration for WordPress-based online stores running WooCommerce.</p>
+        </div>
+        <div class="platform-pill">
+          <h4>BigCommerce</h4>
+          <p>Native Authorize.net integration for BigCommerce storefronts of any size.</p>
+        </div>
+        <div class="platform-pill">
+          <h4>WordPress</h4>
+          <p>Accept payments on WordPress sites through Authorize.net-compatible payment plugins.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <h2>What We Can Integrate</h2>
+      <div class="check-list">
+        <div class="check-item">Point of sale systems</div>
+        <div class="check-item">EMR &amp; EHR platforms</div>
+        <div class="check-item">WooCommerce storefronts</div>
+        <div class="check-item">BigCommerce storefronts</div>
+        <div class="check-item">WordPress payment pages</div>
+        <div class="check-item">Practice management software</div>
+        <div class="check-item">CRM &amp; ERP platforms</div>
+        <div class="check-item">Custom &amp; proprietary systems</div>
+        <div class="check-item">Recurring billing platforms</div>
+        <div class="check-item">Accounts payable automation</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cta-band">
+    <h2>Not sure if your platform is compatible?</h2>
+    <p>Reach out and our team will assess your current software environment and identify the best integration path for your business.</p>
+    <a href="index.html#contact" class="btn-white">Talk to Our Team</a>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2026 Disruptive Payments LLC. All rights reserved. &nbsp;|&nbsp; <a href="privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="terms-and-conditions.html">Terms &amp; Conditions</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment Security - Fraud Prevention, Chargebacks & PCI Compliance | Disruptive Payments</title>
+  <meta name="description" content="Advanced payment security tools including ecommerce fraud prevention, chargeback management, dispute resolution, and PCI DSS compliance through MAXpci." />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', -apple-system, sans-serif; color: #1a1a2e; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 2rem; }
+
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 72px; background: #d0d4db;
+      border-bottom: 1px solid #d8dce4; position: sticky; top: 0; z-index: 100;
+    }
+    .nav img { height: 48px; width: auto; display: block; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: #333; }
+    .nav-links a:hover { color: #1a73e8; }
+    .btn-solid { font-size: 14px; font-weight: 600; color: #fff; background: #1a73e8; padding: 9px 20px; border-radius: 6px; }
+    .btn-solid:hover { background: #1558b0; }
+
+    .page-hero {
+      background: #0d1b3e; padding: 4rem 2rem 3rem; text-align: center;
+    }
+    .page-hero .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #5fb3ff; margin-bottom: .75rem; }
+    .page-hero h1 { font-size: 42px; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+    .page-hero p { font-size: 17px; color: rgba(255,255,255,0.75); max-width: 660px; margin: 0 auto; line-height: 1.8; }
+
+    .content { padding: 3.5rem 0 4rem; }
+    .content h2 { font-size: 26px; font-weight: 700; color: #0d1b3e; margin-bottom: .6rem; }
+    .content p { font-size: 15px; color: #555; line-height: 1.8; margin-bottom: 1rem; }
+    .section-block { margin-bottom: 3.5rem; }
+
+    /* Two column fraud split */
+    .fraud-split { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin: 1.75rem 0; }
+    .fraud-panel { background: #f4f7fd; border: 1px solid #e4eaf4; border-radius: 14px; padding: 1.75rem; }
+    .fraud-panel-title { font-size: 17px; font-weight: 700; color: #0d1b3e; margin-bottom: 1.1rem; padding-bottom: .65rem; border-bottom: 2px solid #1a73e8; }
+    .fraud-panel ul { list-style: none; padding: 0; }
+    .fraud-panel ul li { font-size: 14px; color: #444; padding: 5px 0 5px 18px; position: relative; }
+    .fraud-panel ul li::before { content: '\2022'; position: absolute; left: 0; color: #1a73e8; font-size: 16px; line-height: 1.4; }
+
+    /* Pre/Post auth band */
+    .auth-band { background: #0d1b3e; border-radius: 12px; padding: 1.75rem 2.25rem; margin: 1.75rem 0; }
+    .auth-band-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .auth-col h4 { font-size: 14px; font-weight: 700; color: #5fb3ff; margin-bottom: .6rem; text-transform: uppercase; letter-spacing: .06em; }
+    .auth-col p { font-size: 13px; color: rgba(255,255,255,0.78); line-height: 1.7; margin: 0; }
+
+    /* Disputes three-col */
+    .disputes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 1.75rem 0; }
+    .dispute-card { background: #fff; border: 1px solid #e4eaf4; border-radius: 12px; padding: 1.5rem; }
+    .dispute-card h3 { font-size: 16px; font-weight: 700; color: #1a73e8; margin-bottom: .9rem; }
+    .dispute-card ul { list-style: none; padding: 0; }
+    .dispute-card ul li { font-size: 13px; color: #444; padding: 4px 0 4px 16px; position: relative; line-height: 1.6; }
+    .dispute-card ul li::before { content: '\2022'; position: absolute; left: 0; color: #1a73e8; }
+
+    /* PCI stats */
+    .pci-band { background: #0d1b3e; border-radius: 12px; padding: 2rem 2.25rem; margin: 1.75rem 0; }
+    .pci-band p { font-size: 14px; color: rgba(255,255,255,0.82); line-height: 1.8; margin: 0; }
+
+    .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 1.75rem 0; }
+    .stat-box { background: #1a73e8; border-radius: 12px; padding: 1.5rem; text-align: center; }
+    .stat-num { font-size: 42px; font-weight: 700; color: #fff; line-height: 1; margin-bottom: .4rem; }
+    .stat-label { font-size: 13px; color: rgba(255,255,255,0.85); line-height: 1.5; }
+
+    .cta-band { background: #1a73e8; padding: 3rem 2rem; text-align: center; }
+    .cta-band h2 { font-size: 28px; font-weight: 700; color: #fff; margin-bottom: .75rem; }
+    .cta-band p { font-size: 16px; color: rgba(255,255,255,0.85); margin-bottom: 1.75rem; }
+    .btn-white { background: #fff; color: #1a73e8; font-size: 15px; font-weight: 700; padding: 13px 32px; border-radius: 6px; display: inline-block; }
+    .btn-white:hover { background: #f0f4ff; }
+
+    .footer { background: #0d1b3e; padding: 1.5rem 2rem; text-align: center; }
+    .footer p { font-size: 13px; color: rgba(255,255,255,0.55); }
+    .footer a { color: rgba(255,255,255,0.7); }
+    .footer a:hover { color: #fff; }
+
+    @media (max-width: 800px) {
+      .fraud-split, .auth-band-inner, .disputes-grid, .stats-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html"><img src="Logo.png" alt="Disruptive Payments" /></a>
+    <ul class="nav-links">
+      
+      <li><a href="index.html#solutions">Solutions</a></li><li><a href="mobile-payments.html">Mobile Payments</a></li>
+      <li><a href="index.html#industries">Industries</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a href="index.html#contact" class="btn-solid">Get Started</a>
+  </nav>
+
+  <div class="page-hero">
+    <p class="eyebrow">Solutions</p>
+    <h1>Security First</h1>
+    <p>PCI-compliant infrastructure, advanced fraud prevention, and chargeback management tools to protect your business and your customers at every transaction.</p>
+  </div>
+
+  <div class="content container">
+
+    <!-- IDENTITY & FRAUD -->
+    <div class="section-block">
+      <h2>Identity &amp; Fraud Tools</h2>
+      <p>Fraud costs businesses billions of dollars annually, and the methods used by bad actors are constantly evolving. Disruptive Payments provides layered fraud protection across both pre-authorization and post-authorization touchpoints, covering ecommerce fraud prevention and dispute management on a single platform.</p>
+
+      <div class="fraud-split">
+        <div class="fraud-panel">
+          <div class="fraud-panel-title">Ecommerce Fraud Prevention</div>
+          <ul>
+            <li>Card Testing</li>
+            <li>Criminal Fraud</li>
+            <li>Refund Fraud</li>
+            <li>Loyalty Abuse</li>
+            <li>Promo Abuse</li>
+            <li>AI/ML Batch Processing</li>
+          </ul>
+        </div>
+        <div class="fraud-panel">
+          <div class="fraud-panel-title">Disputes &amp; Chargebacks</div>
+          <ul>
+            <li>Stop chargeback losses</li>
+            <li>Intercept and deflect disputes</li>
+            <li>Real-time refunds</li>
+            <li>Reduce friendly fraud</li>
+            <li>Representments</li>
+            <li>Single platform</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="auth-band">
+        <div class="auth-band-inner">
+          <div class="auth-col">
+            <h4>Pre-Authorization</h4>
+            <p>Guards your merchants' security by monitoring transactions to prevent fraud before it occurs. Helps identify target audience and ideal customer profiles. Business verification and more.</p>
+          </div>
+          <div class="auth-col">
+            <h4>Post-Authorization</h4>
+            <p>Addresses disputes, chargebacks, and fraudulent transactions after authorization. Reduces losses through automated representment and real-time refund capabilities.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DISPUTES & CHARGEBACKS DETAIL -->
+    <div class="section-block">
+      <h2>Disputes &amp; Chargebacks</h2>
+      <p>Chargebacks are one of the most expensive and time-consuming challenges for merchants. Our dispute management tools work across all major card networks to intercept disputes early, automate responses, and reduce the volume and cost of chargebacks reaching your account.</p>
+
+      <div class="disputes-grid">
+        <div class="dispute-card">
+          <h3>Inquiries</h3>
+          <ul>
+            <li>Visa Order Insight&reg;</li>
+            <li>Mastercard Consumer Clarity</li>
+            <li>Visa Account Name Inquiry</li>
+          </ul>
+        </div>
+        <div class="dispute-card">
+          <h3>Alerts</h3>
+          <ul>
+            <li>Verifi Cardholder Dispute Resolution Network&trade; (CDRN&reg;)</li>
+            <li>Ethoca Alerts: Confirmed Fraud and Consumer Disputes</li>
+            <li>Visa Rapid Dispute Resolution (RDR)</li>
+            <li>Mastercard Collaboration</li>
+          </ul>
+        </div>
+        <div class="dispute-card">
+          <h3>Notices</h3>
+          <ul>
+            <li>Verifi INFORM</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- PCI PROGRAM -->
+    <div class="section-block">
+      <h2>PCI Compliance Program</h2>
+      <p>Achieving and maintaining PCI DSS compliance is a requirement for every business that accepts card payments. Disruptive Payments partners with MAXpci, a trusted third-party PCI provider with over 50 years of industry experience, to make compliance straightforward and manageable for merchants of all sizes.</p>
+
+      <div class="pci-band">
+        <p>MAXpci simplifies the complex process of achieving and maintaining PCI DSS standards. Their intuitive SAQ wizard and knowledgeable support staff ensure that assistance is readily available, empowering merchants to prioritize security and compliance with confidence.</p>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-box">
+          <div class="stat-num">3X</div>
+          <div class="stat-label">Greater than industry average compliance rate</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">$0*</div>
+          <div class="stat-label">Non-compliance fees for enrolled merchants</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">$50K</div>
+          <div class="stat-label">Breach coverage for compliant merchants</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cta-band">
+    <h2>Ready to protect your business?</h2>
+    <p>Contact our team to learn how Disruptive Payments can secure your payment environment.</p>
+    <a href="index.html#contact" class="btn-white">Get in Touch</a>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2026 Disruptive Payments LLC. All rights reserved. &nbsp;|&nbsp; <a href="privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="terms-and-conditions.html">Terms &amp; Conditions</a></p>
+  </footer>
+</body>
+</html>
