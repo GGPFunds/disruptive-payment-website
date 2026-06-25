@@ -5,7 +5,11 @@
       "Bash(gh pr create --title 'Add README with project overview' --body ' *)",
       "mcp__visualize__read_me",
       "mcp__visualize__show_widget",
-      "WebFetch(domain:www.trxservices.com)"
+      "WebFetch(domain:www.trxservices.com)",
+      "Bash(cp \"C:\\\\Users\\\\JasonSydney\\\\Downloads\\\\googleb578442a507cbaf2.html\" \"C:\\\\Users\\\\JasonSydney\\\\OneDrive - Gotham Green Partners\\\\Documents\\\\Marketing\\\\Disruptive Payment Website\\\\googleb578442a507cbaf2.html\")",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)"
     ]
   }
 }
