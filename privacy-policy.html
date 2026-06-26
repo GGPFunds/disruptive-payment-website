@@ -27,7 +27,13 @@
     .footer { background: #07102a; padding: 2rem; text-align: center; }
     .footer p { font-size: 13px; color: #6a7fa8; }
     .footer a { color: #8a9dc0; margin: 0 .5rem; }
-  </style>
+    .nav-links .dropdown { position: relative; }
+    .nav-links .dropdown > a::after { content: ' \25BE'; font-size: 11px; }
+    .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid #e4eaf4; border-radius: 8px; min-width: 220px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); z-index: 200; padding: 0.5rem 0; }
+    .dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu li { list-style: none; }
+    .dropdown-menu li a { display: block; padding: 9px 16px; font-size: 13px; font-weight: 500; color: #333; transition: background .15s; }
+    .dropdown-menu li a:hover { background: #f4f7fd; color: #1a73e8; }  </style>
 </head>
 <body>
 

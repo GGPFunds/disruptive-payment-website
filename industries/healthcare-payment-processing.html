@@ -23,15 +23,40 @@
     .featured-card p { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.6; max-width: 600px; }
     .featured-card-cta { font-size: 15px; font-weight: 700; color: #5fb3ff; white-space: nowrap; margin-left: 2rem; }
     @media (max-width: 700px) { .sectors-grid { grid-template-columns: 1fr; } .solutions-list { grid-template-columns: 1fr; } .featured-card { flex-direction: column; align-items: flex-start; gap: 1rem; } .featured-card-cta { margin-left: 0; } }
-  </style>
+    .nav-links .dropdown { position: relative; }
+    .nav-links .dropdown > a::after { content: ' \25BE'; font-size: 11px; }
+    .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid #e4eaf4; border-radius: 8px; min-width: 220px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); z-index: 200; padding: 0.5rem 0; }
+    .dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu li { list-style: none; }
+    .dropdown-menu li a { display: block; padding: 9px 16px; font-size: 13px; font-weight: 500; color: #333; transition: background .15s; }
+    .dropdown-menu li a:hover { background: #f4f7fd; color: #1a73e8; }  </style>
 </head>
 <body>
   <nav class="nav">
     <a href="../index.html"><img src="../Logo.png" alt="Disruptive Payments" /></a>
-    <ul class="nav-links">
-      
-      <li><a href="../index.html#solutions">Solutions</a></li><li><a href="../mobile-payments.html">Mobile Payments</a></li>
-      <li><a href="../index.html#industries">Industries</a></li>
+        <ul class="nav-links">
+      <li class="dropdown">
+        <a href="../index.html#solutions">Solutions</a>
+        <ul class="dropdown-menu">
+          <li><a href="../built-to-scale.html">Payment Processing</a></li>
+          <li><a href="../embedded-payments.html">Embedded Payments</a></li>
+        </ul>
+      </li>
+      <li><a href="../mobile-payments.html">Mobile Payments</a></li>
+      <li class="dropdown">
+        <a href="../index.html#industries">Industries</a>
+        <ul class="dropdown-menu">
+          <li><a href="../industries/automotive.html">Automotive</a></li>
+          <li><a href="../industries/banks-financial-institutions.html">Banks &amp; Financial Institutions</a></li>
+          <li><a href="../industries/firearms.html">Firearms</a></li>
+          <li><a href="../industries/municipalities.html">Municipalities</a></li>
+          <li><a href="../industries/retail.html">Retail</a></li>
+          <li><a href="../industries/mobile-merchants.html">Mobile Merchants</a></li>
+          <li><a href="../industries/parking.html">Parking</a></li>
+          <li><a href="../industries/restaurant.html">Restaurant</a></li>
+          <li><a href="../industries/healthcare-payment-processing.html">Healthcare and Wellness</a></li>
+        </ul>
+      </li>
       <li><a href="../index.html#contact">Contact</a></li>
     </ul>
     <a href="../index.html#contact" class="btn-solid">Get Started</a>
