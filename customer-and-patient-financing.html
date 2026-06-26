@@ -70,6 +70,13 @@
     .check-item { background: #fff; border: 1px solid #e4eaf4; border-radius: 10px; padding: .9rem 1.1rem; font-size: 14px; font-weight: 600; color: #0d1b3e; display: flex; align-items: center; gap: 10px; }
     .check-item::before { content: '\2713'; color: #1a73e8; font-weight: 700; font-size: 15px; flex-shrink: 0; }
 
+    .stat-banner { background: #1a73e8; padding: 2.5rem 2rem; display: flex; align-items: center; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+    .stat-banner-item { text-align: center; }
+    .stat-banner-num { font-size: 52px; font-weight: 700; color: #fff; line-height: 1; }
+    .stat-banner-label { font-size: 15px; color: rgba(255,255,255,0.85); margin-top: .4rem; font-weight: 500; }
+    .stat-banner-divider { width: 1px; height: 60px; background: rgba(255,255,255,0.3); }
+    @media (max-width: 600px) { .stat-banner { gap: 1.5rem; } .stat-banner-divider { display: none; } .stat-banner-num { font-size: 40px; } }
+
     .cta-band { background: #1a73e8; padding: 3rem 2rem; text-align: center; }
     .cta-band h2 { font-size: 28px; font-weight: 700; color: #fff; margin-bottom: .75rem; }
     .cta-band p { font-size: 16px; color: rgba(255,255,255,0.85); margin-bottom: 1.75rem; }
@@ -131,6 +138,23 @@
     <p>Help your customers and patients say yes to the products, services, and treatments they need. Flexible financing solutions that increase your revenue and get you paid upfront.</p>
   </div>
 
+  <div class="stat-banner">
+    <div class="stat-banner-item">
+      <div class="stat-banner-num">$15,000</div>
+      <div class="stat-banner-label">Maximum financing amount</div>
+    </div>
+    <div class="stat-banner-divider"></div>
+    <div class="stat-banner-item">
+      <div class="stat-banner-num">0%</div>
+      <div class="stat-banner-label">Interest for qualified customers</div>
+    </div>
+    <div class="stat-banner-divider"></div>
+    <div class="stat-banner-item">
+      <div class="stat-banner-num">100%</div>
+      <div class="stat-banner-label">Paid to you upfront</div>
+    </div>
+  </div>
+
   <div class="content container">
 
     <div class="section-block">
@@ -155,8 +179,8 @@
           <p>Inclusive approval criteria and streamlined applications mean more customers qualify. Financing opens your services to people who want what you offer but need a payment structure that fits their budget.</p>
         </div>
         <div class="benefit-card">
-          <h3>Competitive Interest Rates</h3>
-          <p>Competitive rates help customers manage purchases more comfortably, reducing the financial stress that causes people to delay or abandon a decision. Lower perceived cost means higher conversion.</p>
+          <h3>Up to $15,000 at 0% Interest</h3>
+          <p>Qualified customers can finance up to $15,000 with no interest. That is a powerful offer to put in front of someone who wants what you provide but is hesitating on the cost. Zero interest financing closes deals that would otherwise walk out the door.</p>
         </div>
         <div class="benefit-card">
           <h3>Flexibility on Fund Usage</h3>
