@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer & Patient Financing | Disruptive Payments</title>
+  <meta name="description" content="Flexible customer and patient financing solutions for retail, healthcare, medspas, automotive, and more. Help your customers say yes and get paid upfront." />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', -apple-system, sans-serif; color: #1a1a2e; line-height: 1.7; background: #f4f7fd; }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 72px; background: #d0d4db; border-bottom: 1px solid #b0b4bb; position: sticky; top: 0; z-index: 100; }
+    .nav img { height: 48px; width: auto; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: #333; }
+    .nav-links a:hover { color: #1a73e8; }
+    .btn-solid { font-size: 14px; font-weight: 600; color: #fff; background: #1a73e8; padding: 9px 20px; border-radius: 6px; }
+    .nav-links .dropdown { position: relative; }
+    .nav-links .dropdown > a::after { content: ' \25BE'; font-size: 11px; }
+    .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid #e4eaf4; border-radius: 8px; min-width: 220px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); z-index: 200; padding: 0.5rem 0; }
+    .dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu li { list-style: none; }
+    .dropdown-menu li a { display: block; padding: 9px 16px; font-size: 13px; font-weight: 500; color: #333; transition: background .15s; }
+    .dropdown-menu li a:hover { background: #f4f7fd; color: #1a73e8; }
+
+    .page-hero { background: #0d1b3e; padding: 4rem 2rem 3rem; text-align: center; }
+    .page-hero .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #5fb3ff; margin-bottom: .75rem; }
+    .page-hero h1 { font-size: 42px; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+    .page-hero p { font-size: 17px; color: rgba(255,255,255,0.75); max-width: 680px; margin: 0 auto; line-height: 1.8; }
+
+    .content { padding: 3.5rem 0 4rem; }
+    .content h2 { font-size: 26px; font-weight: 700; color: #0d1b3e; margin-bottom: .6rem; }
+    .content p { font-size: 15px; color: #555; line-height: 1.8; margin-bottom: 1rem; }
+    .section-block { margin-bottom: 3.5rem; }
+
+    .benefit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 1.75rem 0; }
+    .benefit-card { background: #fff; border: 1px solid #e4eaf4; border-radius: 12px; padding: 1.75rem 1.5rem; }
+    .benefit-card h3 { font-size: 17px; font-weight: 700; color: #0d1b3e; margin-bottom: .75rem; }
+    .benefit-card p { font-size: 14px; color: #555; line-height: 1.7; }
+
+    .who-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 1.75rem 0; }
+    .who-card { background: #fff; border: 1px solid #e4eaf4; border-radius: 12px; padding: 1.75rem 1.5rem; }
+    .who-card h3 { font-size: 15px; font-weight: 700; color: #1a73e8; margin-bottom: .5rem; }
+    .who-card p { font-size: 13px; color: #555; line-height: 1.7; margin: 0; }
+
+    .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 1.75rem 0; }
+    .step-card { background: #0d1b3e; border-radius: 12px; padding: 2rem 1.5rem; text-align: center; }
+    .step-number { width: 44px; height: 44px; background: #5fb3ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; color: #0d1b3e; margin: 0 auto 1rem; }
+    .step-card h3 { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: .5rem; }
+    .step-card p { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.6; }
+
+    .delivery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 1.75rem 0; }
+    .delivery-item { background: #fff; border: 1px solid #e4eaf4; border-radius: 10px; padding: 1.25rem 1.5rem; }
+    .delivery-item h4 { font-size: 15px; font-weight: 700; color: #1a73e8; margin-bottom: .4rem; }
+    .delivery-item p { font-size: 13px; color: #555; line-height: 1.6; margin: 0; }
+
+    .highlight-band { background: #0d1b3e; border-radius: 12px; padding: 2rem 2.25rem; margin: 1.75rem 0; }
+    .highlight-band h3 { font-size: 20px; font-weight: 700; color: #5fb3ff; margin-bottom: .75rem; }
+    .highlight-band p { font-size: 14px; color: rgba(255,255,255,0.82); line-height: 1.8; margin-bottom: .9rem; }
+    .highlight-band p:last-child { margin-bottom: 0; }
+
+    .services-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 1.5rem 0; }
+    .service-tag { background: #fff; border: 1px solid #c8d8f5; border-radius: 20px; padding: 8px 18px; font-size: 14px; font-weight: 600; color: #0d1b3e; }
+
+    .check-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 1.5rem 0; }
+    .check-item { background: #fff; border: 1px solid #e4eaf4; border-radius: 10px; padding: .9rem 1.1rem; font-size: 14px; font-weight: 600; color: #0d1b3e; display: flex; align-items: center; gap: 10px; }
+    .check-item::before { content: '\2713'; color: #1a73e8; font-weight: 700; font-size: 15px; flex-shrink: 0; }
+
+    .cta-band { background: #1a73e8; padding: 3rem 2rem; text-align: center; }
+    .cta-band h2 { font-size: 28px; font-weight: 700; color: #fff; margin-bottom: .75rem; }
+    .cta-band p { font-size: 16px; color: rgba(255,255,255,0.85); margin-bottom: 1.75rem; }
+    .btn-white { background: #fff; color: #1a73e8; font-size: 15px; font-weight: 700; padding: 13px 32px; border-radius: 6px; display: inline-block; }
+    .btn-white:hover { background: #f0f4ff; }
+
+    .footer { background: #07102a; padding: 2rem; text-align: center; }
+    .footer p { font-size: 13px; color: #6a7fa8; }
+    .footer a { color: #8a9dc0; }
+
+    html, body { overflow-x: hidden; }
+    @media (max-width: 768px) {
+      .nav { padding: 0 1rem; }
+      .nav-links { display: none; }
+      .btn-solid { font-size: 13px; padding: 8px 14px; }
+      .page-hero h1 { font-size: 28px; }
+      .benefit-grid, .who-grid, .steps-grid { grid-template-columns: 1fr; }
+      .delivery-grid, .check-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html"><img src="Logo.png" alt="Disruptive Payments" /></a>
+    <ul class="nav-links">
+      <li class="dropdown">
+        <a href="index.html#solutions">Solutions</a>
+        <ul class="dropdown-menu">
+          <li><a href="built-to-scale.html">Payment Processing</a></li>
+          <li><a href="embedded-payments.html">Embedded Payments</a></li>
+        </ul>
+      </li>
+      <li><a href="mobile-payments.html">Loan Repayments</a></li>
+      <li><a href="customer-and-patient-financing.html">Customer &amp; Patient Financing</a></li>
+      <li class="dropdown">
+        <a href="index.html#industries">Industries</a>
+        <ul class="dropdown-menu">
+          <li><a href="industries/automotive.html">Automotive</a></li>
+          <li><a href="industries/banks-financial-institutions.html">Banks &amp; Financial Institutions</a></li>
+          <li><a href="industries/firearms.html">Firearms</a></li>
+          <li><a href="industries/municipalities.html">Municipalities</a></li>
+          <li><a href="industries/retail.html">Retail</a></li>
+          <li><a href="industries/mobile-merchants.html">Mobile Merchants</a></li>
+          <li><a href="industries/parking.html">Parking</a></li>
+          <li><a href="industries/restaurant.html">Restaurant</a></li>
+          <li><a href="industries/healthcare-payment-processing.html">Healthcare and Wellness</a></li>
+        </ul>
+      </li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a href="index.html#contact" class="btn-solid">Get Started</a>
+  </nav>
+
+  <div class="page-hero">
+    <p class="eyebrow">Solutions</p>
+    <h1>Customer &amp; Patient Financing</h1>
+    <p>Help your customers and patients say yes to the products, services, and treatments they need. Flexible financing solutions that increase your revenue and get you paid upfront.</p>
+  </div>
+
+  <div class="content container">
+
+    <div class="section-block">
+      <h2>Turn Sticker Shock into a Sale</h2>
+      <p>Whether you are a medspa helping a patient afford a treatment plan, a retailer closing a bigger ticket purchase, a dental practice increasing case acceptance, or an automotive dealer supporting F&I transactions, financing changes the conversation. When cost is no longer the barrier, customers and patients focus on value.</p>
+      <p>Disruptive Payments offers embedded financing solutions that work across a wide range of industries and business models. Our programs are designed to be easy for your team to offer, simple for your customers to apply for, and structured so your business gets paid upfront regardless of how the customer repays over time.</p>
+    </div>
+
+    <div class="section-block">
+      <h2>Why Offer Financing</h2>
+      <div class="benefit-grid">
+        <div class="benefit-card">
+          <h3>Increase Average Ticket Size</h3>
+          <p>When customers can spread a purchase across monthly payments, they are more likely to choose the premium option, add services, or complete a treatment plan they might otherwise defer or decline.</p>
+        </div>
+        <div class="benefit-card">
+          <h3>Get Paid Upfront</h3>
+          <p>Your business receives full payment at the time of the transaction. You carry no repayment risk. The financing partner manages collections, and you focus on delivering great service.</p>
+        </div>
+        <div class="benefit-card">
+          <h3>Expand Your Customer Base</h3>
+          <p>Inclusive approval criteria and streamlined applications mean more customers qualify. Financing opens your services to people who want what you offer but need a payment structure that fits their budget.</p>
+        </div>
+        <div class="benefit-card">
+          <h3>Competitive Interest Rates</h3>
+          <p>Competitive rates help customers manage purchases more comfortably, reducing the financial stress that causes people to delay or abandon a decision. Lower perceived cost means higher conversion.</p>
+        </div>
+        <div class="benefit-card">
+          <h3>Flexibility on Fund Usage</h3>
+          <p>Financing is not limited to a single item or service. Customers can use approved funds across related purchases, upgrades, add-ons, and follow-up services in a single financing event.</p>
+        </div>
+        <div class="benefit-card">
+          <h3>Easier Access to Capital</h3>
+          <p>Streamlined applications and fast decisions mean customers can secure financing at the point of sale without friction, keeping momentum in the conversation and reducing walk-aways.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <h2>Who This Works For</h2>
+      <div class="who-grid">
+        <div class="who-card">
+          <h3>Healthcare &amp; Medical Practices</h3>
+          <p>Increase treatment acceptance rates for elective procedures, dental work, vision correction, and specialist care. Patients choose the care they need without delaying due to cost.</p>
+        </div>
+        <div class="who-card">
+          <h3>Medspas &amp; Aesthetic Practices</h3>
+          <p>Offer financing at the treatment consultation stage to close packages, memberships, and multi-session treatment plans that patients might otherwise think twice about.</p>
+        </div>
+        <div class="who-card">
+          <h3>Retail</h3>
+          <p>Close higher ticket purchases in-store or online. Financing integrates with your POS and ecommerce platform so the option is always available at the moment of decision.</p>
+        </div>
+        <div class="who-card">
+          <h3>Automotive</h3>
+          <p>Support F&I transactions, ancillary product sales, and service department upsells with financing that integrates into your existing dealership workflow and CDK systems.</p>
+        </div>
+        <div class="who-card">
+          <h3>Wellness &amp; Fitness</h3>
+          <p>Sell memberships, packages, and high-value wellness programs with financing that removes the upfront cost barrier and keeps clients committed to their goals.</p>
+        </div>
+        <div class="who-card">
+          <h3>Professional Services</h3>
+          <p>Attorneys, accountants, consultants, and other service providers can offer payment plans that make larger engagements accessible while ensuring the business is paid in full at the outset.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <h2>What Financing Covers</h2>
+      <p>Our financing programs support a broad range of products and services across industries.</p>
+      <div class="services-row">
+        <span class="service-tag">Surgery &amp; Procedures</span>
+        <span class="service-tag">Wellness Programs</span>
+        <span class="service-tag">Retail Products</span>
+        <span class="service-tag">Vision Correction</span>
+        <span class="service-tag">Dental Care</span>
+        <span class="service-tag">Aesthetic Treatments</span>
+        <span class="service-tag">Automotive F&amp;I</span>
+        <span class="service-tag">Service Packages</span>
+        <span class="service-tag">Memberships</span>
+        <span class="service-tag">Professional Engagements</span>
+        <span class="service-tag">Follow-up Care</span>
+        <span class="service-tag">Medications &amp; Products</span>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <h2>How Customers Apply</h2>
+      <p>The application process is fast, simple, and can be completed in minutes at any point in the customer journey.</p>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Complete the Application</h3>
+          <p>Customers or patients complete a short application in your office, on your website, or via a link sent directly to their phone.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Select a Payment Plan</h3>
+          <p>Approved applicants choose from available financing options with monthly payment amounts and terms that fit their budget.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Accept and Complete</h3>
+          <p>Once terms are accepted, the transaction is complete. Your business receives full payment upfront. The financing partner handles the rest.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <h2>How Financing Reaches Your Customers</h2>
+      <p>Multiple delivery channels ensure financing is available wherever your customer is in the buying process.</p>
+      <div class="delivery-grid">
+        <div class="delivery-item">
+          <h4>QR Code</h4>
+          <p>Display a QR code in your location. Customers scan and apply instantly without any staff assistance required.</p>
+        </div>
+        <div class="delivery-item">
+          <h4>Text Message</h4>
+          <p>Send a personalized link directly to a customer's phone. They apply in three steps without needing to download anything.</p>
+        </div>
+        <div class="delivery-item">
+          <h4>Website Integration</h4>
+          <p>Embed financing options directly into your website or checkout flow so customers can apply at the moment they are ready to buy.</p>
+        </div>
+        <div class="delivery-item">
+          <h4>Back-Office</h4>
+          <p>Your team can send financing links to customers directly from your back-office or point of sale system at any stage of the sale.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <div class="highlight-band">
+        <h3>Patient Financing for Healthcare &amp; Medspas</h3>
+        <p>For healthcare practices, medspas, and wellness providers, financing is one of the highest-impact tools available to increase treatment acceptance. When a patient is told what a procedure costs, the decision often comes down to whether they can manage that cost in their current budget. Financing changes that calculation entirely.</p>
+        <p>Our patient financing solutions are embedded directly into the practice workflow. Patients can apply during a consultation, from the waiting room, or from a follow-up text sent after their visit. Approval is fast and the terms are competitive. Your practice receives full payment at the time of service and carries no repayment risk. The result is higher case acceptance, larger average treatment values, and a better patient experience from the very first financial conversation.</p>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <h2>What Our Financing Program Includes</h2>
+      <div class="check-list">
+        <div class="check-item">Fast application and approval</div>
+        <div class="check-item">Competitive interest rates for customers</div>
+        <div class="check-item">Business paid upfront at time of sale</div>
+        <div class="check-item">No repayment risk for your business</div>
+        <div class="check-item">QR code, text, web, and back-office delivery</div>
+        <div class="check-item">POS and ecommerce integration</div>
+        <div class="check-item">Flexible fund usage across products and services</div>
+        <div class="check-item">Inclusive approval criteria</div>
+        <div class="check-item">Support across multiple industries</div>
+        <div class="check-item">Dedicated implementation support</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cta-band">
+    <h2>Ready to add financing to your business?</h2>
+    <p>Contact our team to learn how customer and patient financing can increase your revenue and close more sales.</p>
+    <a href="index.html#contact" class="btn-white">Talk to Our Team</a>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2026 Disruptive Payments LLC. All rights reserved. &nbsp;|&nbsp; <a href="mailto:info@disruptivepaymentsllc.com">info@disruptivepaymentsllc.com</a> &nbsp;|&nbsp; <a href="privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="terms-and-conditions.html">Terms &amp; Conditions</a></p>
+  </footer>
+
+</body>
+</html>
