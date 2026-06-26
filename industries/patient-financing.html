@@ -31,9 +31,15 @@
     .services-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 1.5rem 0; }
     .service-tag { background: #f4f7fd; border: 1px solid #c8d8f5; border-radius: 20px; padding: 8px 18px; font-size: 14px; font-weight: 600; color: #0d1b3e; }
 
+    .stat-banner { background: #1a73e8; padding: 2.5rem 2rem; display: flex; align-items: center; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+    .stat-banner-item { text-align: center; }
+    .stat-banner-num { font-size: 52px; font-weight: 700; color: #fff; line-height: 1; }
+    .stat-banner-label { font-size: 15px; color: rgba(255,255,255,0.85); margin-top: .4rem; font-weight: 500; }
+    .stat-banner-divider { width: 1px; height: 60px; background: rgba(255,255,255,0.3); }
     @media (max-width: 700px) {
       .benefit-grid, .steps-grid { grid-template-columns: 1fr; }
       .delivery-grid { grid-template-columns: 1fr; }
+      .stat-banner { gap: 1.5rem; } .stat-banner-divider { display: none; } .stat-banner-num { font-size: 40px; }
     }
     .nav-links .dropdown { position: relative; }
     .nav-links .dropdown > a::after { content: ' \25BE'; font-size: 11px; }
@@ -83,6 +89,18 @@
       <p class="eyebrow"><a href="healthcare-payment-processing.html" style="color:#5fb3ff;">Healthcare and Wellness</a> &nbsp;&rsaquo;&nbsp; Patient &amp; Medspa Financing</p>
       <h1>Patient &amp; Medspa Financing</h1>
       <p class="hero-sub">Help patients say yes to the treatments they need with flexible, accessible financing solutions embedded directly into your practice.</p>
+    </div>
+  </div>
+
+  <div class="stat-banner">
+    <div class="stat-banner-item">
+      <div class="stat-banner-num">$15,000</div>
+      <div class="stat-banner-label">Maximum financing amount</div>
+    </div>
+    <div class="stat-banner-divider"></div>
+    <div class="stat-banner-item">
+      <div class="stat-banner-num">0%</div>
+      <div class="stat-banner-label">Interest for qualified patients</div>
     </div>
   </div>
 
