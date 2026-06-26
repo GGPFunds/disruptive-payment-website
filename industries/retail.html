@@ -22,10 +22,21 @@
     .package-item { background: #f4f7fd; border: 1px solid #c8d8f5; border-radius: 10px; padding: 1rem 1.25rem; font-size: 15px; font-weight: 600; color: #0d1b3e; display: flex; align-items: center; gap: 10px; }
     .package-item::before { content: '\2713'; color: #1a73e8; font-weight: 700; font-size: 16px; }
 
-    .equipment-band { background: #0d1b3e; border-radius: 12px; padding: 1.75rem 2rem; margin: 2.5rem 0; }
-    .equipment-band h3 { font-size: 17px; font-weight: 700; color: #5fb3ff; margin-bottom: 1rem; }
-    .equipment-list { display: flex; flex-wrap: wrap; gap: 10px; }
-    .equipment-tag { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 8px 16px; font-size: 14px; font-weight: 500; color: #fff; }
+    .hw-section { margin: 2.5rem 0; }
+    .hw-header { background: #0d1b3e; border-radius: 12px 12px 0 0; padding: 1.25rem 1.75rem; display: flex; justify-content: space-between; align-items: center; }
+    .hw-header h3 { font-size: 20px; font-weight: 700; color: #5fb3ff; }
+    .hw-header p { font-size: 12px; color: rgba(255,255,255,0.6); font-style: italic; }
+    .hw-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 0 0 12px 12px; overflow: hidden; border: 1px solid #e4eaf4; border-top: none; }
+    .hw-table th { background: #1a73e8; color: #fff; font-size: 15px; font-weight: 700; padding: 1rem; text-align: center; border-right: 1px solid rgba(255,255,255,0.2); }
+    .hw-table th:last-child { border-right: none; }
+    .hw-table td { padding: .85rem 1rem; font-size: 13px; color: #444; border-right: 1px solid #e4eaf4; border-bottom: 1px solid #e4eaf4; vertical-align: top; }
+    .hw-table td:last-child { border-right: none; }
+    .hw-table tr:nth-child(even) td { background: #f4f7fd; }
+    .hw-table tr:last-child td { border-bottom: none; }
+    .hw-price { font-weight: 700; color: #0d1b3e; font-size: 14px; }
+    .hw-table ul { margin: 0; padding-left: 1.1rem; }
+    .hw-table ul li { margin-bottom: .35rem; line-height: 1.5; }
+    .hw-note { font-size: 12px; color: #888; margin-top: .75rem; font-style: italic; }
 
     @media (max-width: 700px) { .feature-grid, .support-grid, .package-grid { grid-template-columns: 1fr; } }
     .nav-links .dropdown { position: relative; }
@@ -134,14 +145,85 @@
       <div class="package-item">Employee management</div>
     </div>
 
-    <div class="equipment-band">
-      <h3>Compatible Equipment</h3>
-      <div class="equipment-list">
-        <span class="equipment-tag">iPad version 9 or later</span>
-        <span class="equipment-tag">Star Micronics Printers</span>
-        <span class="equipment-tag">Choice Cash Drawers</span>
-        <span class="equipment-tag">Verifone e280 &amp; e285</span>
+    <div class="hw-section">
+      <div class="hw-header">
+        <h3>Compatible Hardware &mdash; Verifone</h3>
+        <p>*Discounted pricing for bulk orders. Cost listed does not include shipping.</p>
       </div>
+      <table class="hw-table">
+        <thead>
+          <tr>
+            <th>e280</th>
+            <th>e285</th>
+            <th>P200 / P400</th>
+            <th>V200c Plus</th>
+            <th>V400m Plus</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Mobile Flexible Connectivity with WiFi &amp; Bluetooth</td>
+            <td>Flexible Connectivity with WiFi &amp; Bluetooth</td>
+            <td>Flexible Connectivity with Bluetooth (WiFi optional)</td>
+            <td>Flexible Connectivity with WiFi, Bluetooth, &amp; LAN</td>
+            <td>Flexible Connectivity with WiFi, Bluetooth, &amp; 4G LTE</td>
+          </tr>
+          <tr>
+            <td>Accepts EMV Chip &amp; PIN, magstripe, &amp; NFC/contactless</td>
+            <td>Accepts EMV Chip &amp; PIN, magstripe, &amp; NFC/contactless</td>
+            <td>Accepts EMV Chip &amp; PIN, magstripe, &amp; NFC/contactless</td>
+            <td>Accepts EMV Chip &amp; PIN, magstripe, &amp; NFC/contactless</td>
+            <td>Accepts EMV Chip &amp; PIN, magstripe, &amp; NFC/contactless</td>
+          </tr>
+          <tr>
+            <td class="hw-price">Cost: $395*</td>
+            <td class="hw-price">Cost: $310*</td>
+            <td class="hw-price">Cost: $200 / $300*</td>
+            <td class="hw-price">Cost: $326*</td>
+            <td class="hw-price">Cost: $480*</td>
+          </tr>
+          <tr>
+            <td>
+              <ul>
+                <li>Provide engaging customer experiences everywhere &mdash; in the shop, in the aisle, or at the door</li>
+                <li>Large color touchscreen supports easy on-screen interaction, signature capture, and secure PIN entry</li>
+                <li>Lightweight, compact, &amp; self-contained</li>
+                <li>Transactions are fast, private, convenient, &amp; secure</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>Lightweight with a powerful battery and robust connectivity, keeps your business up with your customers</li>
+                <li>Easily engage your customers with the vibrant color LCD &amp; sound capabilities that drive multimedia</li>
+                <li>Enjoy fast processing times &amp; customer satisfaction thanks to the powerful processor &amp; abundant memory</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>Easily engage customers with the vibrant color LCD &amp; sound capabilities that drive multimedia</li>
+                <li>Better performance, more memory and high processing speeds for an excellent checkout experience</li>
+                <li>Offer rewards, loyalty programs, digital couponing and other customer features</li>
+                <li>Faster printer speed; P400 adds signature capture</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>Easily engage customers with the vibrant color LCD &amp; sound capabilities that drive multimedia</li>
+                <li>Enjoy fast processing times &amp; customer satisfaction thanks to the powerful processor &amp; abundant memory</li>
+                <li>Deliver offers &amp; loyalty benefits to enhance engagement and increase revenue right at the point of sale</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>User-friendly: from the display angle to the textured grips, engineered for maximum usability &amp; longevity</li>
+                <li>Service bundle for business growth: easily &amp; economically add innovative apps like loyalty &amp; pay with points</li>
+                <li>Ready for eCommerce: increase client retention with eCommerce solutions like Advanced Payment Methods</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="hw-note">Also compatible: iPad (version 9 or later), Star Micronics Printers, Choice Cash Drawers. Contact us for full hardware catalog and bulk pricing.</p>
     </div>
 
   </div>
