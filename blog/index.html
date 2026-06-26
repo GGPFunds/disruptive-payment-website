@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Disruptive Payments</title>
+  <meta name="description" content="Insights on payment processing, high-risk merchant accounts, LegitScript certification, and industry-specific payment solutions from the team at Disruptive Payments." />
+  <link rel="icon" type="image/png" href="../favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', -apple-system, sans-serif; color: #1a1a2e; line-height: 1.7; background: #f4f7fd; }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 72px; background: #d0d4db; border-bottom: 1px solid #b0b4bb; position: sticky; top: 0; z-index: 100; }
+    .nav img { height: 48px; width: auto; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: #333; }
+    .nav-links a:hover { color: #1a73e8; }
+    .btn-solid { font-size: 14px; font-weight: 600; color: #fff; background: #1a73e8; padding: 9px 20px; border-radius: 6px; }
+    .nav-links .dropdown { position: relative; }
+    .nav-links .dropdown > a::after { content: ' \25BE'; font-size: 11px; }
+    .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid #e4eaf4; border-radius: 8px; min-width: 220px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); z-index: 200; padding: 0.5rem 0; }
+    .dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu li { list-style: none; }
+    .dropdown-menu li a { display: block; padding: 9px 16px; font-size: 13px; font-weight: 500; color: #333; transition: background .15s; }
+    .dropdown-menu li a:hover { background: #f4f7fd; color: #1a73e8; }
+
+    .page-hero { background: #0d1b3e; padding: 3.5rem 2rem 2.5rem; }
+    .page-hero .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #5fb3ff; margin-bottom: .75rem; }
+    .page-hero h1 { font-size: 42px; font-weight: 700; color: #fff; margin-bottom: .75rem; }
+    .page-hero p { font-size: 16px; color: rgba(255,255,255,0.7); max-width: 580px; }
+
+    .blog-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; padding: 3.5rem 0 5rem; }
+    .blog-card { background: #fff; border: 1px solid #e4eaf4; border-radius: 14px; overflow: hidden; transition: box-shadow .2s, transform .2s; }
+    .blog-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,.1); transform: translateY(-3px); }
+    .blog-card-body { padding: 2rem; }
+    .blog-tag { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #1a73e8; margin-bottom: .6rem; }
+    .blog-card h2 { font-size: 20px; font-weight: 700; color: #0d1b3e; line-height: 1.3; margin-bottom: .75rem; }
+    .blog-card p { font-size: 14px; color: #555; line-height: 1.75; margin-bottom: 1.25rem; }
+    .blog-meta { font-size: 12px; color: #999; margin-bottom: 1.25rem; }
+    .read-more { font-size: 14px; font-weight: 600; color: #1a73e8; }
+    .read-more:hover { text-decoration: underline; }
+
+    .footer { background: #07102a; padding: 2rem; text-align: center; }
+    .footer p { font-size: 13px; color: #6a7fa8; }
+    .footer a { color: #8a9dc0; }
+
+    html, body { overflow-x: hidden; }
+    @media (max-width: 768px) {
+      .nav { padding: 0 1rem; }
+      .nav-links { display: none; }
+      .btn-solid { font-size: 13px; padding: 8px 14px; }
+      .page-hero h1 { font-size: 28px; }
+      .blog-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="../index.html"><img src="../Logo.png" alt="Disruptive Payments" /></a>
+    <ul class="nav-links">
+      <li class="dropdown">
+        <a href="../index.html#solutions">Solutions</a>
+        <ul class="dropdown-menu">
+          <li><a href="../built-to-scale.html">Payment Processing</a></li>
+          <li><a href="../embedded-payments.html">Embedded Payments</a></li>
+        </ul>
+      </li>
+      <li><a href="../mobile-payments.html">Loan Repayments</a></li>
+      <li><a href="../customer-and-patient-financing.html">Customer &amp; Patient Financing</a></li>
+      <li class="dropdown">
+        <a href="../index.html#industries">Industries</a>
+        <ul class="dropdown-menu">
+          <li><a href="../industries/automotive.html">Automotive</a></li>
+          <li><a href="../industries/banks-financial-institutions.html">Banks &amp; Financial Institutions</a></li>
+          <li><a href="../industries/firearms.html">Firearms</a></li>
+          <li><a href="../industries/municipalities.html">Municipalities</a></li>
+          <li><a href="../industries/retail.html">Retail</a></li>
+          <li><a href="../industries/mobile-merchants.html">Mobile Merchants</a></li>
+          <li><a href="../industries/parking.html">Parking</a></li>
+          <li><a href="../industries/restaurant.html">Restaurant</a></li>
+          <li><a href="../industries/healthcare-payment-processing.html">Healthcare and Wellness</a></li>
+        </ul>
+      </li>
+      <li><a href="../blog/">Blog</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="../index.html#contact" class="btn-solid">Get Started</a>
+  </nav>
+
+  <div class="page-hero">
+    <p class="eyebrow">Insights</p>
+    <h1>The Disruptive Payments Blog</h1>
+    <p>Payment processing, high-risk merchant accounts, compliance, and industry-specific solutions - written by people who actually work in this space.</p>
+  </div>
+
+  <div class="container">
+    <div class="blog-grid">
+
+      <a href="peptide-payment-processing.html" class="blog-card">
+        <div class="blog-card-body">
+          <p class="blog-tag">High-Risk Processing</p>
+          <p class="blog-meta">June 2026</p>
+          <h2>Peptide Payment Processing: Why It's So Hard and What Actually Works</h2>
+          <p>Banks keep saying no to peptide companies - even the ones doing everything right. Here's why that happens, what LegitScript certification actually means, and how to find a processor that will work with you long-term.</p>
+          <span class="read-more">Read more &rarr;</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2026 Disruptive Payments LLC. All rights reserved. &nbsp;|&nbsp; <a href="mailto:info@disruptivepaymentsllc.com">info@disruptivepaymentsllc.com</a> &nbsp;|&nbsp; <a href="../privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="../terms-and-conditions.html">Terms &amp; Conditions</a></p>
+  </footer>
+
+</body>
+</html>
